@@ -1,0 +1,7 @@
+pandas
+scipy
+beatifulsoup4
+tqdm
+spacy
+transformers
+span-marker
