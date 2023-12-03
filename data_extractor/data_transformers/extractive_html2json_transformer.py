@@ -6,8 +6,8 @@ from data_extractor.data_transformers.abstract_transformer import AbstractTransf
 
 
 class ExtractiveHtml2JsonTransformer(AbstractTransformer):
-    def __init__(self, extractor_kwargs: dict = {}, **kwargs):
-        self.extractor = HtmlInformationExtractor(**extractor_kwargs)
+    def __init__(self, **kwargs):
+        self.extractor = HtmlInformationExtractor(**kwargs)
 
     def _transform(self, html_string: str, **kwargs) -> dict:
         offsets = self.extractor(html_string)

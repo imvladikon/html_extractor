@@ -102,4 +102,10 @@ where we could encode our stats (and even distribution) and after that we need t
 and it's possible to apply the similar techniques, like "blocking"(pruning/reducing the search space of the possible pairwise matches which is equals to the cartesian product of the sets of the columns) and "matching" (finding the best match between the pairs of the columns, such as training biencoder or crossencoder model, where we could encode additional features like it was shown in the previous approach).
 I have experience with such tasks but decided to skip it for now, because it seems that other approaches are more suitable for the current task.
 
+
+ChatGPT: Total tokens:
+ 19059504
+Cost:
+
+57.178512000000005
 ### 4. Evaluation and criteria of success
