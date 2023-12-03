@@ -1,5 +1,5 @@
 
-<p style="text-align: center;"> Home Assignment </p>
+<p style="text-align: center;"> Assignment </p>
 
 You are given a collection of 30K html files containing tables, +30K metadata files.
 Those tables hold generated data. For each table (html file) there is a matching metadata (json file).
@@ -22,8 +22,3 @@ will be tested on our newly generated data.
 In the next interview, we will go over and discuss the assignment.
 For any question you have, feel free to approach either:
 
-Gilad at 052-8310326 (Gilad@beaconcure.com)    
-Gil at 052-6718195 (Gil@beaconcure.com)   
-
-
-Best of luck !
