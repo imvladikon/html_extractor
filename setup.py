@@ -40,7 +40,7 @@ def get_extra_requires(path, add_all=True, ext='*.txt'):
 
     extra_deps = {}
     for filename in path.glob(ext):
-        if filename.name == 'requirements.txt':
+        if filename.name == 'requirements.txt' or len(filename.suffixes) < 2:
             continue
         # convention of naming requirements files: requirements.{module}.txt
         package_suffix = filename.suffixes[-2].strip('.')

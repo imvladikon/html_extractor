@@ -1,7 +1,8 @@
 pandas
 scipy
-beatifulsoup4
+beautifulsoup4
 tqdm
 spacy
 transformers
 span-marker
+dateparser
