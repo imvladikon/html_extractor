@@ -1,20 +1,94 @@
 
-## Task assignment 
+## Example of the data extraction from the html pages 
 
-### Description
+### Problem Statement
 
-It's in the [assignment](assignment) folder.
-In short words, we need to extract the values from the html pages and put them into the JSON file.
+Given:
+- A set of html files (around 30K) with tables
+- A set of metadata files (assuming that it's our labelling data, which will not be provided in the production environment)
 
+Goal:
+- To build a black-box (model or app) that transforms the html files into a set of metadata files
+
+Criteria of success:
+- formulate and check with the stakeholders
+- performance: e.g. the model/app should be able to process 1000 html files in 1 hour with accuracy greater than 90%
+
+### Example of the input and output
+
+An example of the `29999_table`:
+
+```html
+<table id="Table6291Doctorhospital">
+<caption>Table 62.91 Doctor, hospital</caption>
+<thead>
+<tr>
+<th> </th>
+<th>   Kathleen Peters   </th>
+<th>   Glen Jones   </th>
+<th>   Alexis Decker   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" style="font-weight:bold">   Cummings, Weaver and Mitchell   </td>
+<td align="left" style="font-weight:bold; font-style:italic">   338   </td>
+<td align="left">   1133   </td>
+<td align="left" style="font-style:italic">   353   </td>
+</tr>
+<tr>
+<td align="left" style="font-weight:bold">   Mckenzie Ltd   </td>
+<td align="left" style="font-weight:bold; font-style:italic">   1382   </td>
+<td align="left">   91%   </td>
+<td align="left" style="font-style:italic">   15   </td>
+</tr>
+</tbody><tfoot><tr><td>Creation: 18Sep2016 Latvia</td></tr></tfoot>
+</table>
+
+```
+
+output:
+
+```json
+{
+    "body": {
+        "content": [
+            "338",
+            "1133",
+            "353",
+            "1382",
+            "91%",
+            "15"
+        ],
+        "headers": {
+            "col": [
+                "Cummings, Weaver and Mitchell",
+                "Mckenzie Ltd"
+            ],
+            "row": [
+                "Kathleen Peters",
+                "Glen Jones",
+                "Alexis Decker"
+            ]
+        }
+    },
+    "footer": {
+        "table_creation_date:": "18Sep2016",
+        "text": "Creation: 18Sep2016 Latvia"
+    },
+    "header": {
+        "table_id": "62.91",
+        "text": "Table 62.91 Doctor, hospital"
+    }
+}
+```
 
 ### Design process, approach selection and experiments
 
-It's in the [design_process](design_process) folder:
+Please, check a [design_process](design_process) folder:
 
-- [1_problem_definition.md](design_process/1_problem_definition.md) - Problem definition
-- [2_approach_list.md](design_process/2_approach_list.md) - Approach list explanation and selection with criteria of success
-- [3_experiments.md](design_process/3_experiments.md) - Experiments with the selected approaches
-- [4_summary.md](design_process/4_summary.md) - Summary of the experiments and next steps
+- [1_approach_list.md](design_process/2_approach_list.md) - Approach list explanation and selection with criteria of success
+- [2_experiments.md](design_process/3_experiments.md) - Experiments with the selected approaches
 
 ### Implementation
 
