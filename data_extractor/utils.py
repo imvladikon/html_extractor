@@ -32,3 +32,16 @@ def nupdateattrs(obj: Any, properties: Dict) -> None:
     for k, v in properties.items():
         if flatten_hasattr(obj, k):
             flatten_setattr(obj, k, v)
+
+
+def load_examples():
+    import os, json
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    examples_dir = os.path.join(current_dir, "assets")
+    html_string = open(os.path.join(examples_dir, "example_table.html")).read()
+    metadata = json.load(open(os.path.join(examples_dir, "example_metadata.json")))
+    return {
+        "html": html_string,
+        "metadata": metadata,
+    }

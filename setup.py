@@ -40,6 +40,8 @@ def get_extra_requires(path, add_all=True, ext='*.txt'):
 
     extra_deps = {}
     for filename in path.glob(ext):
+        if filename.name == 'requirements.txt':
+            continue
         # convention of naming requirements files: requirements.{module}.txt
         package_suffix = filename.suffixes[-2].strip('.')
         reqs = list({*main_reqs, *read_requirements(filename)})
@@ -70,7 +72,7 @@ if __name__ == '__main__':
                      python_requires='>=3.8',
                      package_dir={__package_name__: __package_name__},
                      package_data={
-                         __package_name__: ['models/*/', 'models/*/*']
+                         __package_name__: ['models/*/', 'models/*/*', 'assets/*']
                      },
                      include_package_data=True,
                      install_requires=read_requirements(HERE / 'requirements.txt'),
